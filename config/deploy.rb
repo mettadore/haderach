@@ -1,10 +1,9 @@
 default_run_options[:pty] = true
-set :application, "haderach.mettadore.com"
+set :application, "odin.mettadore.com"
 set :repository,  "git@github.com:mettadore/haderach.git"
 
 set :scm, "git"
-set :scm_passphrase, "Un+c2WFeH"
-set :user, "deployer"
+set :user, "john"
 ssh_options[:forward_agent] = true
 
 set :use_sudo, false
