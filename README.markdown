@@ -12,6 +12,8 @@ The implementation will always be at the [Kwisatz Haderach homepage](http://kwis
 
 This is just the boring code for a ridiculously simple, yet horribly time-wasting, Rails app.
 
+This is a stupid change for checkin only. Take that matey!
+
 ## License
 
 Copyright (c) 2010 [John W.P. Metta](http://mettadore.com)
