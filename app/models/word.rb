@@ -30,7 +30,7 @@ class Word < ActiveRecord::Base
     para = []
     count = 0
     while count < min
-      para << self.sentence universe
+      para << self.sentence(universe)
       count += para.last.count
     end
     para
