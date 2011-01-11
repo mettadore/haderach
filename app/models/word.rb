@@ -10,7 +10,7 @@ class Word < ActiveRecord::Base
 
   def self.some universe = nil
     if universe
-      Word.find :by_universe universe
+      Word.find :conditions => { :universes=>{:name => universe}}, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => rand(10) + 5 
     else
       Word.find :all, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => rand(10) + 5
     end
