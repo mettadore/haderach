@@ -17,7 +17,7 @@ science_fiction fantasy
 ).each{|genre| Genre.create(:name => genre) }
 
 scifi = Genre.find_by_name("Science Fiction")
-fantasy = Genre.finde_by_name("Fantasy")
+fantasy = Genre.find_by_name("Fantasy")
 
 #%w(
 #pern xanth elenium mists_of_avalon buffy_the_vampire_slayer narnia
