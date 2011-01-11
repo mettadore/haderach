@@ -3,32 +3,38 @@ class Word < ActiveRecord::Base
   
   validates_presence_of :word, :universe_id
   before_validation :downcase!
-    
-  def self.some
-    Word.find :all, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => rand(10) + 5
+        
+  named_scope :by_universe, lambda { |universe| 
+    { :conditions => {:universes =>{:name => universe}}}
+  }
+
+  def self.some universe = nil
+    if universe
+      Word.find :all
+      Word.find :all, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => rand(10) + 5
   end
 
   def self.one
     Word.find(:all, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => 1)[0]
   end
   
-  def self.sentence
+  def self.sentence universe = nil
     sentence = self.some
     sentence.first.is_name = true #Make it titleize this once to start the paragraph, but don't save to the DB
     sentence
   end
   
-  def self.paragraph(min = 20)
+  def self.paragraph min = 20, universe = nil
     para = []
     count = 0
     while count < min
-      para << self.sentence
+      para << self.sentence universe
       count += para.last.count
     end
     para
   end
   
-  def self.universes(para)
+  def self.universes para
     universes = []
     para.each do |sentence|
       sentence.each do |word| 

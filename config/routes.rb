@@ -18,6 +18,14 @@ ActionController::Routing::Routes.draw do |map|
   map.single_title 'title', :controller => 'paragraphs', :action => 'title'
   map.title 'title/:num', :controller => 'paragraphs', :action => 'title'
   
+  map.univ_paragraphs 'universes', :controller 'paragraphs', :action => 'paragraph'
+  map.univ_num_paragraphs 'universe/:universe/paragraphs/:num', :controller => 'paragraphs', :action => 'paragraph'
+  map.univ_multiple 'universe/:universe/paragraphs', :controller => 'paragraphs', :action => 'paragraph', :num => 3
+  map.univ_paragraph 'universe/:universe/paragraph/:min', :controller => 'paragraphs', :action => 'paragraph'
+  map.univ_single_paragraph 'universe/:universe/paragraph', :controller => 'paragraphs', :action => 'paragraph'
+  map.univ_single_title 'universe/:universe/title', :controller => 'paragraphs', :action => 'title'
+  map.univ_title 'universe/:universe/title/:num', :controller => 'paragraphs', :action => 'title'
+  
   map.resources :users
 
   map.root :controller => "home", :action => "show"
