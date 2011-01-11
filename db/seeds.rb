@@ -17,6 +17,7 @@ science_fiction fantasy
 ).each{|genre| Genre.create(:name => genre) }
 
 scifi = Genre.find_by_name("Science Fiction")
+fantasy = Genre.finde_by_name("Fantasy")
 
 #%w(
 #pern xanth elenium mists_of_avalon buffy_the_vampire_slayer narnia
@@ -29,8 +30,9 @@ scifi = Genre.find_by_name("Science Fiction")
 Universe.create(:name => "dune", :website => "http://en.wikipedia.org/wiki/Dune_universe", :genre_id => scifi.id)
 Universe.create(:name => "foundation", :website => "http://en.wikipedia.org/wiki/Foundation_series", :genre_id => scifi.id, :manager_id => M1.id)
 Universe.create(:name => "ringworld", :genre_id => scifi.id, :manager_id => M1.id)
-
+Universe.create(:name => "harry_potter", :genre_id => fantasy.id, :website => "http://en.wikipedia.org/wiki/Harry_Potter")
 Universe.create(:name => "doctor_who", :website => "http://en.wikipedia.org/wiki/Doctor_Who", :genre_id => scifi.id, :manager_id => M2.id)
 
 load 'db/universes/dune.rb'
 load 'db/universes/doctor_who.rb'
+load 'db/universes/harry_potter.rb'
