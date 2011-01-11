@@ -8,7 +8,7 @@ Word.create(:word => "tardis", :universe_id => drwho.id, :is_acronym => true)
 
 ##############
 ## Acronyms
-%w(TARDIS).each{ |word| Word.create(:word => word, :universe_id => dune.id, :is_acronym => true) }
+%w(TARDIS).each{ |word| Word.create(:word => word, :universe_id => drwho.id, :is_acronym => true) }
 
 ##############
 ## Regular Words
