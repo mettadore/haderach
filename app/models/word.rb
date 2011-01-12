@@ -26,6 +26,13 @@ class Word < ActiveRecord::Base
     sentence
   end
   
+  def add_word args
+    if Word.find_by_name(args[:name])
+      return
+    else 
+      Word.create(args)
+    end
+  end
   def self.paragraph min = 20, universe = nil
     para = []
     count = 0

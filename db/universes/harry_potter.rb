@@ -6,12 +6,12 @@ potter = Universe.find_by_name("harry_potter")
 harry_potter hedwig hogsmeade hogwarts hufflepuff pigwidgeon quidditch ravenclaw
 slytherin albus_dumbledore minerva_mcgonagall severus_snape hermione_granger ron_weasley
 ginny_weasley lord_voldemort tom_riddle
-).each{ |word| Word.create(:word => word, :universe_id => potter.id, :is_name => true) }
+).each{ |word| Word.add_word(:word => word, :universe_id => potter.id, :is_name => true) }
 
 ##############
 ## Acronyms
 %w(NEWT OWL
-).each{ |word| Word.create(:word => word, :universe_id => potter.id, :is_acronym => true) }
+).each{ |word| Word.add_word(:word => word, :universe_id => potter.id, :is_acronym => true) }
 
 ##############
 ## Regular Words
@@ -23,4 +23,4 @@ galleon gillyweed gnome grim hinkypunk hippogriff howler hungarian_horntail
 kappa keeper knut kwikspell lumos mandrake marauders_map morsemordre mudblood muggle
 parseltounge patronus quaffle remembrall seeker sickle snitch squib triwizard_tournament
 veela venemous_tentacula veritaserum whomping_willow
-).each{|word| Word.create(:word => word, :universe_id => potter.id)}
+).each{|word| Word.add_word(:word => word, :universe_id => potter.id)}

@@ -11,11 +11,11 @@ gurney_halleck palimbasha farad'n tyekanik irulan javid tabr habbanya_ridge bash
 quizariat shadout_mapes Tupali varota combine_honnete_ober_advancer_mercantiles bhotani_jib lisan_al-gaib
 face_dancers fish_speakers ghola lansraad sietch truthsayer sandworm carryall no-ship stillsuit heighliner
 akrab ishkal padishah duncan_idaho siona hwi_noree
-).each{ |word| Word.create(:word => word, :universe_id => dune.id, :is_name => true) }
+).each{ |word| Word.add_word(:word => word, :universe_id => dune.id, :is_name => true) }
 
 ##############
 ## Acronyms
-%w(choam).each{ |word| Word.create(:word => word, :universe_id => dune.id, :is_acronym => true) }
+%w(choam).each{ |word| Word.add_word(:word => word, :universe_id => dune.id, :is_acronym => true) }
 
 ##############
 ## Regular Words
@@ -28,4 +28,4 @@ minimic_film mish_mish mushtamal musky naib nezhoni noukkers opafire ornithopter
 proces_verbal pundi pyons pyretic portyguls qanat qirtaiba rachag razzia recaths sepkit rimwall sadus sapho sarfa
 schlag selamlik semuta servok shari-a shigawire sihaya sirat solari solido sondagi tahaddi taqwa ulema
 umma uroshnor batigh varite wali weirding yali suk bi-la_kaifa suhl dar_al-hikman prescient
-).each{ |word| Word.create(:word => word, :universe_id => dune.id)}
+).each{ |word| Word.add_word(:word => word, :universe_id => dune.id)}
