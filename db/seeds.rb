@@ -14,7 +14,7 @@ M2.save!
 
 %w(
 science_fiction fantasy
-).each{|genre| Genre.add_namee(:name => genre) }
+).each{|genre| Genre.add_name(:name => genre) }
 
 scifi = Genre.find_by_name("Science Fiction")
 fantasy = Genre.find_by_name("Fantasy")
