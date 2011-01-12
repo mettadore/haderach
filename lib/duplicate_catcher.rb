@@ -6,11 +6,11 @@ module DuplicateCatcher
 
   module ClassMethods
     def add_word args
-      create(args) if find_by_word(args[:word]).nil?
+      create(args) if find(args[:word].downcase).nil?
     end
 
     def add_name args
-      create(args) if find_by_name(args[:name]).nil?
+      create(args) if find_by_name(args[:name].downcase).nil?
     end
 
   end
