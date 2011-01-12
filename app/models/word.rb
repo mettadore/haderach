@@ -33,6 +33,7 @@ class Word < ActiveRecord::Base
       Word.create(args)
     end
   end
+  
   def self.paragraph min = 20, universe = nil
     para = []
     count = 0
