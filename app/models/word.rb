@@ -1,4 +1,5 @@
 class Word < ActiveRecord::Base
+  include DuplicateCatcher
   belongs_to  :universe
   
   validates_presence_of :word, :universe_id
@@ -24,14 +25,6 @@ class Word < ActiveRecord::Base
     sentence = self.some
     sentence.first.is_name = true #Make it titleize this once to start the paragraph, but don't save to the DB
     sentence
-  end
-  
-  def add_word args
-    if Word.find_by_name(args[:name])
-      return
-    else 
-      Word.create(args)
-    end
   end
   
   def self.paragraph min = 20, universe = nil
