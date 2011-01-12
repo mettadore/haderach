@@ -1,7 +1,7 @@
 class CreateUniverses < ActiveRecord::Migration
   def self.up
     create_table :universes do |t|
-      t.string :name, :null => false, 
+      t.string :name, :null => false
       t.string :website
       t.text :description
       t.integer :genre_id, :null => false
