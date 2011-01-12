@@ -6,21 +6,11 @@ module DuplicateCatcher
 
   module ClassMethods
     def add_word args
-      lst = find_by_word(args[:word])
-      if lst.length > 0
-        return
-      else 
-        create(args)
-      end        
+      create(args) if find_by_word(args[:word]).nil?
     end
 
     def add_name args
-      lst = find_by_name(args[:name])
-      if lst.length > 0
-        return
-      else 
-        create(args)
-      end        
+      create(args) if find_by_name(args[:name]).nil?
     end
 
   end
