@@ -5,6 +5,7 @@ class CreateGenres < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :genres, :name, :unique => true
   end
 
   def self.down

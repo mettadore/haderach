@@ -10,6 +10,7 @@ class CreateWords < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :words, :word, :unique => true
   end
 
   def self.down

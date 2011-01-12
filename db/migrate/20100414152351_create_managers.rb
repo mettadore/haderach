@@ -6,6 +6,7 @@ class CreateManagers < ActiveRecord::Migration
 
       t.timestamps
     end
+    add_index :managers, :name, :unique => true
   end
 
   def self.down
