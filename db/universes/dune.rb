@@ -9,7 +9,7 @@ istislah ix richese mahdi usul misr missionaria_protectiva mudir_nahya panoplia_
 quizara_tafwid salusa_secundus sardaukar sayyadina shah-nama shaitan tleilax wallach jacurutu sabiha muriz wadquiyas
 gurney_halleck palimbasha farad'n tyekanik irulan javid tabr habbanya_ridge bashar ziarenka chusuk gamont grumman
 quizariat shadout_mapes Tupali varota combine_honnete_ober_advancer_mercantiles bhotani_jib lisan_al-gaib
-face_dancers fish_speakers ghola lansraad sietch truthsayer sandworm carryall no-ship ornithopter stillsuit heighliner
+face_dancers fish_speakers ghola lansraad sietch truthsayer sandworm carryall no-ship stillsuit heighliner
 akrab ishkal padishah duncan_idaho siona hwi_noree
 ).each{ |word| Word.create(:word => word, :universe_id => dune.id, :is_name => true) }
 
