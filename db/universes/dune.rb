@@ -21,7 +21,7 @@ akrab ishkal padishah duncan_idaho siona hwi_noree
 ## Regular Words
 %w(seitch melange mentat fremkit adab akarso alam_al-mithal al-lat ampoliros amtal auliya aumas ayat bakka baliset
 baradye baraka bindu prana-bindu bled burseg butlerian caid chaumas chaumurky cherem cielago
-crysknife derch distrans elacca el-sayal erg fai filt-plug fiqh fremkit geyrat ghafla guidichar graben gridex_plane
+crysknife derch distrans elacca el-sayal erg fai filt-plug fiqh geyrat ghafla guidichar graben gridex_plane
 gom_jabbar guild haiiiii-yoh hajj hajra hiereg ibad ijaz ikhut-eigh ilm inkvine jubba kanly karama khala
 kindjal kiswa kitab_al-ibar krimskell kull_wahad kulon lazgun liban literjon maker mantene maula metaglass mihna 
 minimic_film mish_mish mushtamal musky naib nezhoni noukkers opafire ornithopter out-freyn plasteel pleniscenta prana
