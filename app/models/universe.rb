@@ -1,4 +1,6 @@
 class Universe < ActiveRecord::Base
+  include DuplicateCatcher
+  
   belongs_to  :genre
   belongs_to  :manager
   

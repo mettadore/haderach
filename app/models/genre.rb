@@ -1,4 +1,6 @@
 class Genre < ActiveRecord::Base
+  include DuplicateCatcher
+  
   has_many  :universes
   
   validates_presence_of :name

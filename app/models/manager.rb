@@ -1,4 +1,6 @@
 class Manager < ActiveRecord::Base
+  include DuplicateCatcher
+
   has_many  :universes
   
   has_many  :universe_managers
