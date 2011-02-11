@@ -1,11 +1,11 @@
 <p>
   <b>Name:</b>
-  <%=h @manager.name %>
+  <%=h @manager.name.titleize %>
 </p>
 
 <p>
   <b>Website:</b>
-  <%=h @manager.website %>
+  <%=link_to @manager.website, @manager.website %>
 </p>
 
 

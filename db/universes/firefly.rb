@@ -1,6 +1,6 @@
 M2 = Manager.new(:name => "Michael Fessler", :website => "http://twitter.com/technorav")
 M2.save!
-Universe.add_name(:name => "firefly", :website => "http://en.wikipedia.org/wiki/Firefly_%28TV_series%29", :genre_id => scifi.id, :manager_id => M2.id)
+Universe.add_name(:name => "firefly", :website => "http://en.wikipedia.org/wiki/Firefly_%28TV_series%29", :genre_id => Genre.find_by_name("Science Fiction").id, :manager_id => M2.id)
 
 firefly = Universe.find_by_name("firefly")
 

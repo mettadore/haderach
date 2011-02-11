@@ -1,3 +1,4 @@
+require 'duplicate_catcher'
 class Universe < ActiveRecord::Base
   include DuplicateCatcher
   

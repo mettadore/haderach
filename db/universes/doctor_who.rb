@@ -1,6 +1,6 @@
 M2 = Manager.new(:name => "Kelly Guimont", :website => "http://thebananaverse.com")
 M2.save!
-Universe.add_name(:name => "doctor_who", :website => "http://en.wikipedia.org/wiki/Doctor_Who", :genre_id => scifi.id, :manager_id => M2.id)
+Universe.add_name(:name => "doctor_who", :website => "http://en.wikipedia.org/wiki/Doctor_Who", :genre_id => Genre.find_by_name("Science Fiction").id, :manager_id => M2.id)
 
 drwho = Universe.find_by_name("doctor_who")
 

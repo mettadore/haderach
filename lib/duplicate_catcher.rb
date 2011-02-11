@@ -10,6 +10,7 @@ module DuplicateCatcher
     end
 
     def add_name args
+      puts find_by_name(args[:name].downcase)
       create(args) if find_by_name(args[:name].downcase).nil?
     end
 

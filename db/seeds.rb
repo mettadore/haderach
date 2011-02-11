@@ -6,9 +6,7 @@
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
 
-Manager.add_name(:name => "John Metta", :website => "http://mettadore.com")
-M1 = Manager.new(:name => "Bill Jackson", :website => "http://twitter.com/wajiii")
-M1.save!
+Manager.add_name(:name => "John Metta", :website => "http://johnmetta.com")
 
 %w(
 science_fiction fantasy
@@ -26,8 +24,6 @@ fantasy = Genre.find_by_name("Fantasy")
 #).each{ |univ| Universe.create(:name => univ, :genre_id => scifi.id) }
 
 Universe.add_name(:name => "dune", :website => "http://en.wikipedia.org/wiki/Dune_universe", :genre_id => scifi.id)
-Universe.add_name(:name => "foundation", :website => "http://en.wikipedia.org/wiki/Foundation_series", :genre_id => scifi.id, :manager_id => M1.id)
-Universe.add_name(:name => "ringworld", :genre_id => scifi.id, :manager_id => M1.id)
 Universe.add_name(:name => "harry_potter", :genre_id => fantasy.id, :website => "http://en.wikipedia.org/wiki/Harry_Potter")
 
 load 'db/universes/dune.rb'

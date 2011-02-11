@@ -23,4 +23,5 @@ Haderach::Application.routes.draw do
   resources :users
   match '/' => 'home#show'
   match ':page' => 'home#show', :as => :home, :page => /index|wordlist/
+  match '*path' => redirect('/')
 end
