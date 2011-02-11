@@ -8,7 +8,6 @@
 
 Manager.add_name(:name => "John Metta", :website => "http://mettadore.com")
 M1 = Manager.new(:name => "Bill Jackson", :website => "http://twitter.com/wajiii")
-M2 = Manager.new(:name => "Kelly Guimont", :website => "http://thebananaverse.com")
 M1.save!
 M2.save!
 
@@ -31,7 +30,6 @@ Universe.add_name(:name => "dune", :website => "http://en.wikipedia.org/wiki/Dun
 Universe.add_name(:name => "foundation", :website => "http://en.wikipedia.org/wiki/Foundation_series", :genre_id => scifi.id, :manager_id => M1.id)
 Universe.add_name(:name => "ringworld", :genre_id => scifi.id, :manager_id => M1.id)
 Universe.add_name(:name => "harry_potter", :genre_id => fantasy.id, :website => "http://en.wikipedia.org/wiki/Harry_Potter")
-Universe.add_name(:name => "doctor_who", :website => "http://en.wikipedia.org/wiki/Doctor_Who", :genre_id => scifi.id, :manager_id => M2.id)
 
 load 'db/universes/dune.rb'
 load 'db/universes/doctor_who.rb'

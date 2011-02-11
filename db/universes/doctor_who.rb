@@ -1,8 +1,11 @@
+M2 = Manager.new(:name => "Kelly Guimont", :website => "http://thebananaverse.com")
+Universe.add_name(:name => "doctor_who", :website => "http://en.wikipedia.org/wiki/Doctor_Who", :genre_id => scifi.id, :manager_id => M2.id)
+
 drwho = Universe.find_by_name("doctor_who")
 
 ##############
 ## Proper Nouns
-%w(Doctor First_Doctor Second_Doctor Third_Doctor Fourth_Doctor Fifth_Doctor Sixth_Doctor 
+%w{Doctor First_Doctor Second_Doctor Third_Doctor Fourth_Doctor Fifth_Doctor Sixth_Doctor 
 Seventh_Doctor Eighth_Doctor Ninth_Doctor Tenth_Doctor Eleventh_Doctor Susan_Foreman 
 Ian_Chesterton Barbara_Wright Vicki_Pallister Steven_Taylor Katarina Sara_Kingdom Dodo_Chaplet 
 Polly_Wright Ben_Jackson Jamie_McCrimmon Victoria_Waterfield Zoe_Heriot Liz_Shaw Jo_Grant 
@@ -26,18 +29,18 @@ Lupine_Wavelength_Haemovariform Malevilus Meron Monan_Host Morpho Myloki Nekkist
 Plasmaton Posicarian Prison_Guard The_Forgotten Quarsian Ranfo The_Remote Rill Sentient_Iron 
 Shadeys Skeleton_Crew Sontar_Sand_Shrews Terpsivore Tractite Vashta_Nerada Viyran Voracious_Craw 
 Vortisaur Vromyx Warfreek Wurm 
-).each{ |word| Word.add_word(:word => word, :universe_id => drwho.id, :is_name => true) }
+}.each{ |word| Word.add_word(:word => word, :universe_id => drwho.id, :is_name => true) }
 
 ##############
 ## Acronyms
-%w(TARDIS).each{ |word| Word.add_word(:word => word, :universe_id => drwho.id, :is_acronym => true) }
+%w{TARDIS}.each{ |word| Word.add_word(:word => word, :universe_id => drwho.id, :is_acronym => true) }
 
 ##############
 ## Regular Words
-%w(screwdriver call_box TARDIS_key companion aliens time_travel planets space_travel tv_show 
+%w{screwdriver call_box TARDIS_key companion aliens time_travel planets space_travel tv_show 
 tv_series television_show science_fiction sci-fi comics radio_dramas specials novels DVDs travel 
 suit sneakers 3-D_glasses sonic_screwdriver scarf celery cricket_uniform alien 
-).each{|word| Word.add_word(:word => word, :universe_id => drwho.id)}
+}.each{|word| Word.add_word(:word => word, :universe_id => drwho.id)}
 
 
 
