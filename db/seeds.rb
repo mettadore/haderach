@@ -9,7 +9,6 @@
 Manager.add_name(:name => "John Metta", :website => "http://mettadore.com")
 M1 = Manager.new(:name => "Bill Jackson", :website => "http://twitter.com/wajiii")
 M1.save!
-M2.save!
 
 %w(
 science_fiction fantasy
