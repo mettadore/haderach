@@ -33,3 +33,4 @@ Universe.add_name(:name => "harry_potter", :genre_id => fantasy.id, :website => 
 load 'db/universes/dune.rb'
 load 'db/universes/doctor_who.rb'
 load 'db/universes/harry_potter.rb'
+load 'db/universes/firefly.rb'

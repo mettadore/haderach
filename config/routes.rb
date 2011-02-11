@@ -1,34 +1,26 @@
-ActionController::Routing::Routes.draw do |map|
-  map.resources :managers
-
-  map.resources :words
-
-  map.resources :universes
-  
-  map.signup 'signup', :controller => 'users', :action => 'new'
-  map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'
-  map.login 'login', :controller => 'user_sessions', :action => 'new'
-  map.resources :user_sessions
-
-  map.paragraphs 'paragraphs/:num/:min', :controller => 'paragraphs', :action => 'paragraph'
-  map.num_paragraphs 'paragraphs/:num', :controller => 'paragraphs', :action => 'paragraph'
-  map.multiple 'paragraphs', :controller => 'paragraphs', :action => 'paragraph', :num => 3
-  map.paragraph 'paragraph/:min', :controller => 'paragraphs', :action => 'paragraph'
-  map.single_paragraph 'paragraph', :controller => 'paragraphs', :action => 'paragraph'
-  map.single_title 'title', :controller => 'paragraphs', :action => 'title'
-  map.title 'title/:num', :controller => 'paragraphs', :action => 'title'
-  
-  map.univ_paragraphs 'universes', :controller => 'universes', :action => 'index'
-  map.univ_num_paragraphs 'universe/:universe/paragraphs/:num', :controller => 'paragraphs', :action => 'paragraph'
-  map.univ_multiple 'universe/:universe/paragraphs', :controller => 'paragraphs', :action => 'paragraph', :num => 3
-  map.univ_paragraph 'universe/:universe/paragraph/:min', :controller => 'paragraphs', :action => 'paragraph'
-  map.univ_single_paragraph 'universe/:universe/paragraph', :controller => 'paragraphs', :action => 'paragraph'
-  map.univ_single_title 'universe/:universe/title', :controller => 'paragraphs', :action => 'title'
-  map.univ_title 'universe/:universe/title/:num', :controller => 'paragraphs', :action => 'title'
-  
-  map.resources :users
-
-  map.root :controller => "home", :action => "show"
-  map.home ':page', :controller => 'home', :action => "show", :page => /index|wordlist/
-
+Haderach::Application.routes.draw do
+  resources :managers
+  resources :words
+  resources :universes
+  match 'signup' => 'users#new', :as => :signup
+  match 'logout' => 'user_sessions#destroy', :as => :logout
+  match 'login' => 'user_sessions#new', :as => :login
+  resources :user_sessions
+  match 'paragraphs/:num/:min' => 'paragraphs#paragraph', :as => :paragraphs
+  match 'paragraphs/:num' => 'paragraphs#paragraph', :as => :num_paragraphs
+  match 'paragraphs' => 'paragraphs#paragraph', :as => :multiple, :num => 3
+  match 'paragraph/:min' => 'paragraphs#paragraph', :as => :paragraph
+  match 'paragraph' => 'paragraphs#paragraph', :as => :single_paragraph
+  match 'title' => 'paragraphs#title', :as => :single_title
+  match 'title/:num' => 'paragraphs#title', :as => :title
+  match 'universes' => 'universes#index', :as => :univ_paragraphs
+  match 'universe/:universe/paragraphs/:num' => 'paragraphs#paragraph', :as => :univ_num_paragraphs
+  match 'universe/:universe/paragraphs' => 'paragraphs#paragraph', :as => :univ_multiple, :num => 3
+  match 'universe/:universe/paragraph/:min' => 'paragraphs#paragraph', :as => :univ_paragraph
+  match 'universe/:universe/paragraph' => 'paragraphs#paragraph', :as => :univ_single_paragraph
+  match 'universe/:universe/title' => 'paragraphs#title', :as => :univ_single_title
+  match 'universe/:universe/title/:num' => 'paragraphs#title', :as => :univ_title
+  resources :users
+  match '/' => 'home#show'
+  match ':page' => 'home#show', :as => :home, :page => /index|wordlist/
 end

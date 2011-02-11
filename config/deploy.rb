@@ -1,5 +1,5 @@
 default_run_options[:pty] = true
-set :application, "odin.mettadore.com"
+set :application, "odin.johnmetta.com"
 set :repository,  "git@github.com:mettadore/haderach.git"
 
 set :scm, "git"
