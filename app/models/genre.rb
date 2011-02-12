@@ -1,3 +1,4 @@
+include 'duplicate_catcher'
 class Genre < ActiveRecord::Base
   include DuplicateCatcher
   
