@@ -13,6 +13,18 @@
   <%=h @universe.description %>
 </p>
 
+<table>
+  <tr>
+	<th>Word</th>
+	<th>Definition</th>
+	<th>External Website</th>
+  </tr>
 
-<%= link_to 'Edit', edit_universe_path(@universe) %> |
-<%= link_to 'Back', universes_path %>
+<% @universe.words.each do |word| %>
+  <tr>
+    <td><%= link_to word, word %></td>
+	<td><%= word.definition %></td>
+	<td><%= link_to word.website, word.website %></td>
+  </tr>
+<% end %>
+</table>
