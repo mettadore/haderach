@@ -58,7 +58,7 @@ class Word < ActiveRecord::Base
   end
   
   def address
-    website ? website : "http://en.wikipedia.org/wiki/#{word}"
+    website ? website : "http://en.wikipedia.org/wiki/#{word.titleize}"
   end
 
   private
