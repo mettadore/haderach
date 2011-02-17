@@ -25,8 +25,10 @@ fantasy = Genre.find_by_name("Fantasy")
 
 Universe.add_name(:name => "dune", :website => "http://en.wikipedia.org/wiki/Dune_universe", :genre_id => scifi.id)
 Universe.add_name(:name => "harry_potter", :genre_id => fantasy.id, :website => "http://en.wikipedia.org/wiki/Harry_Potter")
+Universe.add_name(:name => "wheel_of_time", :genre_id => fantasy.id, :website => "http://en.wikipedia.org/wiki/The_Wheel_of_Time")
 
 load 'db/universes/dune.rb'
 load 'db/universes/doctor_who.rb'
 load 'db/universes/harry_potter.rb'
 load 'db/universes/firefly.rb'
+load 'db/universes/wheel_of_time.rb'
