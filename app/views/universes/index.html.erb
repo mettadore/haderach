@@ -24,7 +24,7 @@
 	<td><%= universe.count %></td>
 	<td><%= universe.genre.name.titleize %></td>
 	<td><%= link_to universe.manager.name.titleize, universe.manager.website %></td>
-	<td><%= link_to universe.website, universe.website %></td>
+	<td><%= link_to link, universe.website %></td>
   </tr>
 <% end %>
 </table>
