@@ -5,7 +5,7 @@
 
 <p>
   <b>Website:</b>
-  <%=h @universe.website %>
+  <%=link_to @universe.website, @universe.website %>
 </p>
 
 <p>
@@ -22,9 +22,9 @@
 
 <% @universe.words.each do |word| %>
   <tr>
-    <td><%= link_to word, word %></td>
+    <td><%= link_to word.proper, word %></td>
 	<td><%= word.definition %></td>
-	<td><%= link_to word.website, word.website %></td>
+	<td><%= link_to "link", word.address %></td>
   </tr>
 <% end %>
 </table>
