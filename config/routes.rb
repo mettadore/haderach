@@ -14,12 +14,13 @@ Haderach::Application.routes.draw do
   match 'title' => 'paragraphs#title', :as => :single_title
   match 'title/:num' => 'paragraphs#title', :as => :title
   match 'universes' => 'universes#index', :as => :univ_paragraphs
-  match 'universe/:universe/paragraphs/:num' => 'paragraphs#paragraph', :as => :univ_num_paragraphs
-  match 'universe/:universe/paragraphs' => 'paragraphs#paragraph', :as => :univ_multiple, :num => 3
-  match 'universe/:universe/paragraph/:min' => 'paragraphs#paragraph', :as => :univ_paragraph
-  match 'universe/:universe/paragraph' => 'paragraphs#paragraph', :as => :univ_single_paragraph
-  match 'universe/:universe/title' => 'paragraphs#title', :as => :univ_single_title
-  match 'universe/:universe/title/:num' => 'paragraphs#title', :as => :univ_title
+  match 'universes/:universe/paragraphs/:num/:min' => 'paragraphs#paragraph', :as => :univ_num_paragraphs
+  match 'universes/:universe/paragraphs/:num' => 'paragraphs#paragraph', :as => :univ_num_paragraphs
+  match 'universes/:universe/paragraphs' => 'paragraphs#paragraph', :as => :univ_multiple, :num => 3
+  match 'universes/:universe/paragraph/:min' => 'paragraphs#paragraph', :as => :univ_paragraph
+  match 'universes/:universe/paragraph' => 'paragraphs#paragraph', :as => :univ_single_paragraph
+  match 'universes/:universe/title' => 'paragraphs#title', :as => :univ_single_title
+  match 'universes/:universe/title/:num' => 'paragraphs#title', :as => :univ_title
   resources :users
   match '/' => 'home#show'
   match ':page' => 'home#show', :as => :home, :page => /index|wordlist/

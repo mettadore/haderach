@@ -1,4 +1,4 @@
-univ = Universe.find_by_name("wheel_of_time")
+univ = Universe.find_by_name("Wheel Of Time")
 
 #############
 ## Proper nouns

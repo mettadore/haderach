@@ -4,9 +4,9 @@
 		<% para.each do |sentence| %>
 			<% sentence.each do |word| %>
 				<% if word == sentence.last %> 
-					<%= word.proper + "." %>
+					<%= word.word + "." %>
 				<% else %>
-				  <%= word.proper %>
+				  <%= word.word %>
 				<% end %>
 			<% end %>
 		<% end %>

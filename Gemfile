@@ -14,3 +14,6 @@ gem 'formtastic'
 gem 'will_paginate', '>=3.0.pre'
 gem 'test-unit'
 gem 'pg'
+gem 'sqlite3'
+gem 'friendly_id', '~> 3.2.1'
+

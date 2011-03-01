@@ -2,7 +2,7 @@ M2 = Manager.new(:name => "Kelly Guimont", :website => "http://thebananaverse.co
 M2.save!
 Universe.add_name(:name => "doctor_who", :website => "http://en.wikipedia.org/wiki/Doctor_Who", :genre_id => Genre.find_by_name("Science Fiction").id, :manager_id => M2.id)
 
-drwho = Universe.find_by_name("doctor_who")
+drwho = Universe.find_by_name("Doctor Who")
 
 ##############
 ## Proper Nouns
@@ -20,8 +20,8 @@ Face_of_Boe Gelth Nanogenes Blon_Fel-Fotch_Passameer-Day_Slitheen
 Jocrassa_Fel-Fotch_Passameer-Day_Slitheen Sip_Fel-Fotch_Passameer-Day_Slitheen Henry_van_Statten 
 Jagrafess Mighty_Jagrafess_of_the_Holy_Hadrojassic_Maxarodenfoe Reapers Anne_Droid Trine-E 
 Zu-Zana Davinadroid  Dalek_Sec Dalek_Caan Dalek_Thay Dalek_Jast Empress_of_the_Racnoss Racnoss 
-Roboforms Carrionites Catkind Weeping_Angels Pyrovile Sibylline_Sisterhood BBC Torchwood England 
-Cardiff Wales Skaro Kaled Rani Yeti Silurians Dominators Sea_Devils Rutons Zygons Rani Haemovores 
+Roboforms Carrionites Catkind Weeping_Angels Pyrovile Sibylline_Sisterhood
+ Skaro Kaled Rani Yeti Silurians Dominators Sea_Devils Rutons Zygons Haemovores 
 Faction_Paradox Grandfather_Paradox The_Enemy Genesis_Ark Cult_of_Skaro Cybus_Cybermen Cybusmen 
 Rutan Mutter's_Spiral Psychevore The_456 Alpha_Centauran Atraxi Balumin Benelisan Berserker Boekind 
 Charon Chula Cineraria Cthalctose Cyberon Dark Dalek_Empire_Demon Eyeless Garynth Gastronaut 

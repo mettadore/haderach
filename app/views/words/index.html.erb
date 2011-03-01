@@ -8,8 +8,8 @@
 
 <% @words.each do |word| %>
   <tr>
-    <td><%=link_to word.proper, word.address %></td>
-    <td><%=link_to word.universe.proper, word.universe.address %></td>
+    <td><%=link_to word.word, word.address %></td>
+    <td><%=link_to word.universe.name, word.universe.address %></td>
   </tr>
 <% end %>
 </table>

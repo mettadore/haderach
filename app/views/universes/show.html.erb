@@ -22,8 +22,8 @@
 
 <% @universe.words.each do |word| %>
   <tr>
-    <td><%= link_to word.proper, word %></td>
-	<td><%= word.definition %></td>
+    <td><%= link_to word.word, word %></td>
+	<td><%= word.definition ? word.definition : "none" %></td>
 	<td><%= link_to "link", word.address %></td>
   </tr>
 <% end %>

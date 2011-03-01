@@ -4,14 +4,15 @@ class Universe < ActiveRecord::Base
   
   belongs_to  :genre
   belongs_to  :manager
-  
+  has_friendly_id :name, :use_slug => true
   has_many :universe_managers
   has_many :helpers, :through => :universe_managers
   has_many :words
   has_many :phrases
-  
+
+  before_validation :titleizer
+  validates_uniqueness_of :name
   validates_presence_of :name, :genre_id
-  before_validation :downcase!
 
   def self.one
     Universe.find(:all, :order => 'random()', :offset => (Universe.count * rand).to_i, :limit => 1)[0]
@@ -29,14 +30,10 @@ class Universe < ActiveRecord::Base
     words ? words.count : 0
   end
   
-  def proper
-    name.titleize
-  end
-  
   private
   
-  def downcase!
-    self.name = name.downcase.gsub(' ','_') if attribute_present?("name")
+  def titleizer
+    self.name = name.gsub('_',' ').titleize
   end
   
 end

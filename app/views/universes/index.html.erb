@@ -11,6 +11,7 @@
 </p>
 <table>
   <tr>
+	<th>Id #</th>
     <th>Universe</th>
 	<th>Words</th>
 	<th>Genre</th>
@@ -20,6 +21,7 @@
 
 <% @universes.each do |universe| %>
   <tr>
+	<td><%= universe.id %></td>
     <td><%= link_to universe.name.titleize, universe %></td>
 	<td><%= universe.count %></td>
 	<td><%= universe.genre.name.titleize %></td>

@@ -6,9 +6,9 @@
 	<% para.each do |sentence| %>
 		<% sentence.each do |word| %>
 			<% if word == sentence.last %> 
-				<%= word.proper + "." %>
+				<%= word.word + "." %>
 			<% else %>
-			  <%= word.proper %>
+			  <%= word.word %>
 			<% end %>
 		<% end %>
 	<% end %>
@@ -20,7 +20,7 @@
 	<p>
 		<%= "Paragraph " + (i + 1).to_s + ":" if @num > 1 %>
 		<% para.each do |uni| %>
-			<%= link_to uni.proper, uni.address %>
+			<%= link_to uni.name, uni.address %>
 		<% end %>
 	</p>
 <% end %>

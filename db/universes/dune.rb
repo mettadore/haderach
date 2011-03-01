@@ -1,4 +1,4 @@
-dune = Universe.find_by_name("dune")
+dune = Universe.find_by_name("Dune")
 
 ##############
 ## Proper Nouns

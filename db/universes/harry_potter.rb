@@ -1,4 +1,4 @@
-potter = Universe.find_by_name("harry_potter")
+potter = Universe.find_by_name("Harry Potter")
 
 ##############
 ## Proper Nouns

@@ -4,7 +4,7 @@ class Manager < ActiveRecord::Base
   include DuplicateCatcher
 
   has_many  :universes
-  
+  has_friendly_id :name, :use_slug => true
   has_many  :universe_managers
   has_many  :helped, :through => :universe_managers
   before_validation :downcase!
