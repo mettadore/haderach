@@ -16,7 +16,7 @@ This is a stupid change for checkin only. Take that matey!
 
 ## License
 
-Copyright (c) 2010 [John W.P. Metta](http://mettadore.com)
+Copyright (c) 2010 [John W.P. Metta](http://johnmetta.com)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
