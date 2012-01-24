@@ -13,7 +13,13 @@ gem 'acts-as-taggable-on'
 gem 'formtastic'
 gem 'will_paginate', '>=3.0.pre'
 gem 'test-unit'
-gem 'pg'
-gem 'sqlite3'
 gem 'friendly_id', '~> 3.2.1'
+
+group :production do
+  gem 'pg'
+end
+group :development do
+  gem 'sqlite3'
+end
+
 
