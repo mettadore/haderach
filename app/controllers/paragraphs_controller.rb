@@ -14,6 +14,17 @@ class ParagraphsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @paragraphs }
+      format.text {
+          self.response_body = proc { |response, output|
+              @paragraphs.each do |para|
+                  para.each do |sentence|
+                      output.write(sentence.collect(&:word).join(" ") + ".")
+                      output.write("  ") unless sentence == para.last
+                  end
+                  output.write("\n\n") unless para == @paragraphs.last
+              end
+          }
+      }
     end
   end
   
@@ -28,6 +39,11 @@ class ParagraphsController < ApplicationController
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @paragraphs }
+      format.text {
+          self.response_body = proc { |response, output|
+              output.write(@words.collect(&:word).join(" ").titleize)
+          }
+      }
     end
   end
     
