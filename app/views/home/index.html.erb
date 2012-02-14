@@ -37,10 +37,10 @@
             <li><strong><%= link_to "/title/4", title_url(:num => 4) %></strong><br/>
                 A title with <em>minimum</em> of 4 (or any number) words
             </li>
-            <li><strong><%= link_to "/universes/dune/paragraphs/5", univ_num_paragraphs_url(:num => 5, :universe => 1)%></strong><br/>
+            <li><strong><%= link_to "/universes/dune/paragraphs/5", univ_num_paragraphs_url(:num => 5, :universe => "dune")%></strong><br/>
                 5 (or any number) paragraphs from only the Dune universe
             </li>
-            <li><strong><%= link_to "/universes/wheel_of_time/paragraphs/5/35", univ_min_num_paragraphs_url(:num => 5, :min => 35, :universe => 1)%></strong><br/>
+            <li><strong><%= link_to "/universes/wheel_of_time/paragraphs/5/35", univ_min_num_paragraphs_url(:num => 5, :min => 35, :universe => "wheel_of_time")%></strong><br/>
                 5 (or any number) paragraphs, each with a minimum of 35 words, from only the Wheel of Time universe
             </li>
   		</ul>
