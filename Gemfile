@@ -13,8 +13,8 @@ gem 'acts-as-taggable-on'
 gem 'formtastic'
 gem 'will_paginate', '>=3.0.pre'
 gem 'test-unit'
-gem 'friendly_id', '~> 3.2.1'
-
+gem 'friendly_id', "~> 4.0.0"
+gem 'rspec-core'
 group :production do
   gem 'pg'
 end

@@ -10,12 +10,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110301212107) do
+ActiveRecord::Schema.define(:version => 20120214025707) do
 
   create_table "genres", :force => true do |t|
     t.string   "name",       :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "genres", ["name"], :name => "index_genres_on_name", :unique => true
@@ -46,21 +47,10 @@ ActiveRecord::Schema.define(:version => 20110301212107) do
     t.string   "website"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "managers", ["name"], :name => "index_managers_on_name", :unique => true
-
-  create_table "slugs", :force => true do |t|
-    t.string   "name"
-    t.integer  "sluggable_id"
-    t.integer  "sequence",                     :default => 1, :null => false
-    t.string   "sluggable_type", :limit => 40
-    t.string   "scope"
-    t.datetime "created_at"
-  end
-
-  add_index "slugs", ["name", "sluggable_type", "sequence", "scope"], :name => "index_slugs_on_n_s_s_and_s", :unique => true
-  add_index "slugs", ["sluggable_id"], :name => "index_slugs_on_sluggable_id"
 
   create_table "universe_managers", :force => true do |t|
     t.integer  "manager_id"
@@ -77,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20110301212107) do
     t.integer  "manager_id",  :default => 1, :null => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
   add_index "universes", ["name"], :name => "index_universes_on_name", :unique => true
@@ -100,6 +91,7 @@ ActiveRecord::Schema.define(:version => 20110301212107) do
     t.boolean  "is_acronym",  :default => false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
 
 end

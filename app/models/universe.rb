@@ -1,10 +1,11 @@
 require 'duplicate_catcher'
 class Universe < ActiveRecord::Base
   include DuplicateCatcher
-  
+  extend FriendlyId
+  friendly_id :name, :use => :slugged
+
   belongs_to  :genre
   belongs_to  :manager
-  has_friendly_id :name, :use_slug => true
   has_many :universe_managers
   has_many :helpers, :through => :universe_managers
   has_many :words

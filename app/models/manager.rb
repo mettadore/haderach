@@ -2,9 +2,10 @@ require 'duplicate_catcher'
 
 class Manager < ActiveRecord::Base
   include DuplicateCatcher
+  extend FriendlyId
+  friendly_id :name, :use => :slugged
 
   has_many  :universes
-  has_friendly_id :name, :use_slug => true
   has_many  :universe_managers
   has_many  :helped, :through => :universe_managers
   before_validation :downcase!

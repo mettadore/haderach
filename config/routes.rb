@@ -14,10 +14,9 @@ Haderach::Application.routes.draw do
   match 'title' => 'paragraphs#title', :as => :single_title
   match 'title/:num' => 'paragraphs#title', :as => :title
   match 'universes' => 'universes#index', :as => :univ_paragraphs
-  match 'universes/:universe/paragraphs/:num/:min' => 'paragraphs#paragraph', :as => :univ_num_paragraphs
+  match 'universes/:universe/paragraphs/:num/:min' => 'paragraphs#paragraph', :as => :univ_min_num_paragraphs
   match 'universes/:universe/paragraphs/:num' => 'paragraphs#paragraph', :as => :univ_num_paragraphs
   match 'universes/:universe/paragraphs' => 'paragraphs#paragraph', :as => :univ_multiple, :num => 3
-  match 'universes/:universe/paragraph/:min' => 'paragraphs#paragraph', :as => :univ_paragraph
   match 'universes/:universe/paragraph' => 'paragraphs#paragraph', :as => :univ_single_paragraph
   match 'universes/:universe/title' => 'paragraphs#title', :as => :univ_single_title
   match 'universes/:universe/title/:num' => 'paragraphs#title', :as => :univ_title

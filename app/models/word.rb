@@ -2,39 +2,41 @@ require 'duplicate_catcher'
 
 class Word < ActiveRecord::Base
   include DuplicateCatcher
-  belongs_to  :universe
-  has_friendly_id :word, :use_slug => true
+  extend FriendlyId
+  friendly_id :word, :use => :slugged
+
+  belongs_to :universe
   before_validation :titleizer
   validates_presence_of :word, :universe_id
   validates_uniqueness_of :word, :scope => :universe_id
   
-  named_scope :by_universe, lambda { |universe| 
-    { :conditions => {:universes =>{:name => universe}}}
+  scope :by_universe, lambda { |universe|
+    where(:universe == universe)
   }
 
-  def self.some universe = nil
-    if universe
-      Word.find :conditions => { :universes=>{:name => universe}}, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => rand(10) + 5 
+  def self.some univ = nil
+    if univ
+      where(:universe_id => univ.id).order('random()')[0..rand(10) + 5]
     else
-      Word.find :all, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => rand(10) + 5
+      order('random()')[0.. rand(10) + 5]
     end
   end
 
   def self.one
-    Word.find(:all, :order => 'random()', :offset => (Word.count * rand).to_i, :limit => 1)[0]
+    first :order => 'random()', :offset => (Word.count * rand).to_i, :limit => 1
   end
   
-  def self.sentence universe = nil
-    sentence = self.some
+  def self.sentence univ = nil
+    sentence = univ ? self.some(univ = univ) : self.some
     sentence.first.word.capitalize! #Make it titleize this once to start the paragraph, but don't save to the DB
     sentence
   end
   
-  def self.paragraph min = 20, universe = nil
+  def self.paragraph min = 20, univ = nil
     para = []
     count = 0
     while count < min
-      para << self.sentence(universe)
+      para << self.sentence(univ = univ)
       count += para.last.count
     end
     para

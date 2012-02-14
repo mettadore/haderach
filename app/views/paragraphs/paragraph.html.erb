@@ -20,7 +20,7 @@
 	<p>
 		<%= "Paragraph " + (i + 1).to_s + ":" if @num > 1 %>
 		<% para.each do |uni| %>
-			<%= link_to uni.name, uni.address %>
+			<%= link_to uni.name, uni %>
 		<% end %>
 	</p>
 <% end %>

@@ -3,10 +3,11 @@ class ParagraphsController < ApplicationController
   def paragraph
     @paragraphs = []
     @universes = []
+    this_universe = params[:universe] ? Universe.find(params[:universe]) : nil
     @num = params[:num].to_i > 0 ? params[:num].to_i : 1
     @min = params[:min].to_i > 0 ? params[:min].to_i : 20
     @num.times do
-      para = Word.paragraph(@min)
+      para = Word.paragraph(@min, this_universe)
       @universes << Word.universes(para)
       @paragraphs << para
     end
