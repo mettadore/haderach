@@ -11,7 +11,12 @@ univ = Universe.find_by_name("Wheel Of Time")
   shienar tar_valon tear thankan'dar tinkers trolloc whitecloaks avendesora caralain
   daes_dae'mar dai_shan corenne do_miere_a'vron draghkar forsaken gaidin goaban hardan
   hailene hardan karaethon_cycle luthair rhyagelle treekiller treesinger treesong warder
-}.each{ |word| Word.add_word(:word => word, :universe_id => univ.id, :is_name => true) }
+  aes_sedai
+}.each do |word|
+  if Word.find_by_word(word).nil?
+    Word.add_word(:word => word, :universe_id => univ.id, :is_name => true)
+  end
+end
 
 ##############
 ## Acronyms
