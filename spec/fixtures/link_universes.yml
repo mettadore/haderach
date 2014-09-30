@@ -1,9 +1,0 @@
-# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
-
-one:
-  link_id: 1
-  universe_id: 1
-
-two:
-  link_id: 1
-  universe_id: 1

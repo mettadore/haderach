@@ -1,14 +1,5 @@
 class ApplicationController < ActionController::Base
-  helper :all # include all helpers, all the time
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
-
-  before_filter :random_universe
-  
-  private
-  
-  def random_universe
-    @random = Universe.one
-  end
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+  # Prevent CSRF attacks by raising an exception.
+  # For APIs, you may want to use :null_session instead.
+  protect_from_forgery with: :exception
 end

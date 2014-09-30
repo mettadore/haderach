@@ -1,73 +1,14 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-type" content="text/html; charset=utf-8" />
-    <title>Kwisatz Haderach is the new Lorem Ipsum</title>
-		<%= stylesheet_link_tag "style" %>
-  </head>
-  <body>
-    <div id="page">
-      <div id="sidebar">
-        <ul id="sidebar-items">
-					<li>
-						<h3>&hellip; the hell?</h3>
-						<p>
-							It's just a stupid replacement for a <a href="http://en.wikipedia.org/wiki/lorem_ipsum">Lorem Ipsum</a> generator that I made because
-							I got really bored of Lorem Ipsum.
-						</p>
-					<li>
-						<h3>Quick Kwasatz!</h3>
-						<ul class="links">
-							<li><%= link_to "1 paragraph", single_paragraph_url %></li>
-							<li><%= link_to "5 paragraphs", paragraphs_url(:num => 5, :min => 10) %></li>
-							<li><%= link_to "A Single Word Title", single_title_url %></li>
-							<li><%= link_to "Multi-Word Title", title_url(:num => 3) %></li>
-						</ul>
-					</li>
-          <li>
-            <h3>What's Here?</h3>
-							<ul class="links">
-								<li><%= link_to "Known Universes", universes_path %></li>
-								<li><%= link_to "Full Word list", words_path %></li>
-								<li><%= link_to "People Who Help", managers_path %></li>
-							</ul>
-					<li>
-						<h3><%= link_to @random.manager.name.titleize, @random.manager.website %> is awesome!</h3>
-						<p><%= @random.manager.name.titleize %> helped build the Kwisatz Haderach by managing
-							the <%= link_to @random.name.titleize, @random.address %> universe.
-						</p>
-					</li>
-						<h3><%= link_to "Help The Breeding Program!", home_url("wordlist") %></h3>
-						<p>Help build the Kwisatz Haderach. <a href="http://mettadore.com">Contact me</a> with questions
-							or if you want to be <strong>super nice</strong> and give me a list of words for a certain 
-							<%= link_to "Science Fiction or Fantasy universe that's missing or could use some help", universes_url %>.
-						</p>
-						
-        </ul>
-      </div>
+<head>
+  <title>Haderach</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
 
-      <div id="content">
-	      <div id="header">
-          <h1><%= link_to "Kwisatz Haderach", "/" %></h1>
-          <h2>The <strike>voice</strike> <tt style="color:red">placeholder text</tt><br /> from the Outer World!</h2>
-        </div>
-				<p style="color: green"><%= flash[:notice] %></p>
+<%= yield %>
 
-				<%= yield %>
-
-      </div>
-      
-      <div id="footer">&nbsp;</div>
-    </div>
-		<script type="text/javascript">
-		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-		</script>
-		<script type="text/javascript">
-		try {
-		var pageTracker = _gat._getTracker("UA-15851030-1");
-		pageTracker._trackPageview();
-		} catch(err) {}</script>
-  </body>
+</body>
 </html>
